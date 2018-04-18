@@ -1,0 +1,71 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~element-angular/theme/index.css";
+
+.el-row {
+  margin-bottom: 20px;
+}
+
+.el-row:last-child {
+  margin-bottom: 0;
+}
+
+.el-col {
+  border-radius: 4px;
+}
+
+.bg-purple-dark {
+  background: #99a9bf;
+}
+
+.bg-purple {
+  background: #d3dce6;
+}
+
+.bg-purple-light {
+  background: #e5e9f2;
+}
+
+.grid-content {
+  border-radius: 4px;
+  min-height: 36px;
+}
+
+.row-bg {
+  padding: 10px 0;
+  background-color: #f9fafc;
+}
+
+.first-title h1 {
+  color: #67c23a;
+  text-align: center;
+  margin: 10px;
+}
+
+.second-title {
+  color: #67c23a;
+  margin: 10px;
+}
+
+.card-title {
+  text-align: center;
+}
+
+.card-ul {
+  list-style: none;
+  padding: 5px;
+}
+
+.card-ul li {
+  margin: 5px 5px 0;
+}
+
+.faild {
+  color: red;
+}
+
+.btn-info {
+  display: block;
+  text-align: center;
+  margin: 3px 0;
+}

@@ -1,0 +1,49 @@
+<div el-container direction="vertical" class="demo-box mid-outlet">
+  <div el-header class="first-title">
+    <h1>知识库</h1>
+  </div>
+  <div el-main>
+    <div el-row>
+      <h2>模型库：</h2>
+      <el-tree [model]="data">
+      </el-tree>
+    </div>
+  </div>
+  <div el-main>
+    <h2>评分库：</h2>
+    <div el-row>
+      <div el-col offset="1" span="20">
+        <h3>1.技术能力</h3>
+        <div>
+          <span>JAVA:</span>
+          <el-select [model]="'选项2'" size="mini">
+            <el-option *ngFor="let item of lets" [label]="item.label" [value]="item.value">
+            </el-option>
+          </el-select>
+        </div>
+        <div>
+          <span>C++:</span>
+          <el-select [model]="'选项2'" size="mini">
+            <el-option *ngFor="let item of lets" [label]="item.label" [value]="item.value">
+            </el-option>
+          </el-select>
+        </div>
+      </div>
+    </div>
+    <div el-row>
+      <div el-col offset="1" span="20">
+        <h3>2.评分方法</h3>
+        <el-tree [model]="data2">
+        </el-tree>
+      </div>
+    </div>
+    <div el-row>
+      <div el-row>
+        <div el-col offset="1" span="20">
+          <h3>3.判断方法</h3>
+        </div>
+      </div>
+      <div el-row>
+      </div>
+    </div>
+  </div>
