@@ -25,9 +25,9 @@
       </div>
       <div el-col span="4">
         <div class="grid-content">
-          <el-button type="danger">
+          <el-button type="">
             <span class="btn-info">中级程序员</span>
-            <span class="btn-info">100人<span style="color:;">(缺20人)</span></span>
+            <span class="btn-info">100人<span style="color:red;">(缺20人)</span></span>
           </el-button>
         </div>
       </div>
@@ -41,9 +41,9 @@
       </div>
       <div el-col span="4">
         <div class="grid-content">
-          <el-button type="danger">
+          <el-button type="">
             <span class="btn-info">资深程序员</span>
-            <span class="btn-info">100人<span style="color:;">(缺20人)</span></span>
+            <span class="btn-info">100人<span style="color:red;">(缺20人)</span></span>
           </el-button>
         </div>
       </div>
@@ -81,15 +81,15 @@
         <div class="grid-content"></div>
       </div>
     </div>
-    <div el-row gutter="40" type="flex" class="" justify="end">
-      <div el-col span="4">
-        <div class="grid-content">
-          <el-button [plain]="true" type="info" [round]="true">意向人员投稿</el-button>
-        </div>
-        <span>点击上方按钮，您就可以查看申请职位的意向人员的投稿了。</span>
+    <!--     <div el-row gutter="40" type="flex" class="" justify="end">
+    <div el-col span="4">
+      <div class="grid-content">
+        <el-button [plain]="true" type="info" [round]="true">意向人员投稿</el-button>
       </div>
+      <span>点击上方按钮，您就可以查看申请职位的意向人员的投稿了。</span>
     </div>
   </div>
+   --></div>
   <div el-footer>
     <div el-row>
       <h3>职位详情：</h3></div>
@@ -121,6 +121,8 @@
         <br>
       </div>
       <div el-col span="3">
+        <el-button type="success">申请招工</el-button>
+        <br>
         <br>
         <el-button type="success">导出报告</el-button>
         <br>
