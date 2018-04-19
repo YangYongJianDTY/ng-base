@@ -27,24 +27,20 @@ export class AdminComponent implements OnInit {
   }
 
   options: any[] = [{
-    value: 'zhinan',
-    label: '指南',
+    value: 'shejiyuanze',
+    label: '设计原则',
     children: [{
-      value: 'shejiyuanze',
-      label: '设计原则',
-      children: [{
-        value: 'yizhi',
-        label: '一致',
-      }, {
-        value: 'fankui',
-        label: '反馈',
-      }, {
-        value: 'xiaolv',
-        label: '效率',
-      }, {
-        value: 'kekong',
-        label: '可控',
-      }],
+      value: 'yizhi',
+      label: '一致',
+    }, {
+      value: 'fankui',
+      label: '反馈',
+    }, {
+      value: 'xiaolv',
+      label: '效率',
+    }, {
+      value: 'kekong',
+      label: '可控',
     }],
   }, {
     value: 'zujian',
@@ -97,13 +93,13 @@ export class AdminComponent implements OnInit {
 
   moxingtemps: any = [
     { name: '实例1', type: 'success'
-    },{ name: '实例1', type: 'success'
-    },{ name: '实例1', type: 'success'
-    },{ name: '实例1', type: 'success'
-    },{ name: '实例1', type: 'success'
-    },{ name: '实例1', type: 'success'
-    },{ name: '实例1', type: 'success'
-    },{ name: '实例1', type: 'success'
-    },{ name: '实例1', type: 'success'
-    },{ name: '实例1', type: 'success' }]
+    },{ name: '实例2', type: 'success'
+    },{ name: '实例3', type: 'success'
+    },{ name: '实例4', type: 'success'
+    },{ name: '实例5', type: 'success'
+    },{ name: '实例6', type: 'success'
+    },{ name: '实例7', type: 'success'
+    },{ name: '实例8', type: 'success'
+    },{ name: '实例9', type: 'success'
+    },{ name: '实例10', type: 'success' }]
 }

@@ -3,8 +3,9 @@
     <h1>部门管理</h1></div>
   <div el-main style="background-image: url(https://raw.githubusercontent.com/YangYongJianDTY/ng-base/master/src/app/user-info/b4.png); background-size: 1200px">
     <div el-row>
+      <h4>&nbsp;</h4>
       <h3>人才池：</h3>
-      <h4>（点击职位可查看详情哦）</h4>
+      <h4></h4>
     </div>
     <div el-row gutter="40" type="flex" class="" justify="space-around">
       <!--       <div el-col span="4">
@@ -18,7 +19,7 @@
        -->
       <div el-col span="4">
         <div class="grid-content">
-          <el-button type="success">
+          <el-button type="success" (click)="changeTitle('初级程序员')">
             <span class="btn-info">初级程序员</span>
             <span class="btn-info">120人</span>
           </el-button>
@@ -26,15 +27,15 @@
       </div>
       <div el-col span="4">
         <div class="grid-content">
-          <el-button type="">
+          <el-button type="" (click)="changeTitle('中级程序员')">
             <span class="btn-info">中级程序员</span>
-            <span class="btn-info">100人<span style="color:red;">(缺20人)</span></span>
+            <span class="btn-info">90人<span style="color:red;">(缺20人)</span></span>
           </el-button>
         </div>
       </div>
       <div el-col span="4">
         <div class="grid-content">
-          <el-button type="success">
+          <el-button type="success" (click)="changeTitle('高级程序员')">
             <span class="btn-info">高级程序员</span>
             <span class="btn-info">120人</span>
           </el-button>
@@ -42,20 +43,23 @@
       </div>
       <div el-col span="4">
         <div class="grid-content">
-          <el-button type="">
+          <el-button type="" (click)="changeTitle('资深程序员')">
             <span class="btn-info">资深程序员</span>
             <span class="btn-info">100人<span style="color:red;">(缺20人)</span></span>
           </el-button>
         </div>
       </div>
       <div el-col span="4">
+        <h5>Tips:</h5>
+        <p>点击职位，可以在</p>
+        <p>下方显示排名哦。</p>
       </div>
     </div>
     <div el-row style="height: 20px;"></div>
     <div el-row gutter="40" type="flex" class="" justify="space-around">
       <div el-col span="4">
         <div class="grid-content">
-          <el-button type="success">
+          <el-button type="success" (click)="changeTitle('初级测试员')">
             <span class="btn-info">初级测试员</span>
             <span class="btn-info">120人</span>
           </el-button>
@@ -63,7 +67,7 @@
       </div>
       <div el-col span="4">
         <div class="grid-content">
-          <el-button type="success">
+          <el-button type="success" (click)="changeTitle('高级测试员')">
             <span class="btn-info">高级测试员</span>
             <span class="btn-info">120人</span>
           </el-button>
@@ -71,7 +75,7 @@
       </div>
       <div el-col span="4">
         <div class="grid-content">
-          <el-button type="success">
+          <el-button type="success" (click)="changeTitle('系统架构师')">
             <span class="btn-info">系统架构师</span>
             <span class="btn-info">120人</span>
           </el-button>
@@ -95,36 +99,109 @@
    --></div>
   <div el-footer>
     <div el-row>
-      <h3>职位详情：</h3></div>
+      <h3>职位详情：</h3>
+    </div>
     <div el-row type="flex" class="row-bg" justify="center">
-      <div el-col span="16">
-        <el-table [model]="tableData" [scroll-x]="true" center="all">
-          <el-table-column model-key="rank" label="排名" width="150">
+      <div el-col span="15">
+        <h2 style="text-align: center; margin: 10px;">{{listTitle
+}}</h2>
+        <div el-row gutter="0" type="flex" class="row-bg" justify="center">
+          <div el-col span="5">
+            <h3>
+              <span class="table-title cur-por" id="zonghe" onclick="document.getElementById('tab-skill1').style.display='none';document.getElementById('tab-skill2').style.display='none';document.getElementById('tab-zonghe').style.display='none';document.getElementById('tab-' + this.id).style.display = 'block';">
+                <el-tooltip placement="top">
+                  <el-button type="text">综合排名<i class="el-icon-d-caret"></i></el-button>
+                  <ng-template #tip> <span>点我呀~</span> </ng-template>
+                </el-tooltip>
+              </span>
+            </h3>
+          </div>
+          <div el-col span="5">
+            <h3><span class="table-title"><el-button type="text" elDisabled="true">姓名</el-button></span></h3>
+          </div>
+          <div el-col span="5">
+            <h3>
+              <span class="table-title cur-por" id="skill1" onclick="document.getElementById('tab-skill1').style.display='none';document.getElementById('tab-skill2').style.display='none';document.getElementById('tab-zonghe').style.display='none';document.getElementById('tab-' + this.id).style.display = 'block';">
+                <el-tooltip placement="top">
+                  <el-button type="text">学习能力<i class="el-icon-d-caret"></i></el-button>
+                  <ng-template #tip> <span>点我呀~</span> </ng-template>
+                </el-tooltip>
+              </span>
+            </h3>
+          </div>
+          <div el-col span="5">
+            <h3>
+              <span class="table-title cur-por" id="skill2" onclick="document.getElementById('tab-skill1').style.display='none';document.getElementById('tab-skill2').style.display='none';document.getElementById('tab-zonghe').style.display='none';document.getElementById('tab-' + this.id).style.display = 'block';">
+                <el-tooltip placement="top">
+                  <el-button type="text">工作能力<i class="el-icon-d-caret"></i></el-button>
+                  <ng-template #tip> <span>点我呀~</span> </ng-template>
+                </el-tooltip>
+              </span>
+            </h3>
+          </div>
+          <div el-col span="4">
+            <h3><span class="table-title"><el-button type="text" elDisabled="true">多选操作</el-button></span></h3>
+          </div>
+        </div>
+        <el-table [model]="tableData" [scroll-x]="true" center="all" [stripe]="true" [show-header]="false" id="tab-zonghe">
+          <el-table-column model-key="rank" label="综合排名" width="150">
           </el-table-column>
           <el-table-column model-key="name" label="姓名" width="150">
           </el-table-column>
-          <el-table-column model-key="skill1" label="技能1" width="150">
+          <el-table-column model-key="skill1" label="学习能力" width="150" class="el-icon-d-caret">
           </el-table-column>
-          <el-table-column model-key="skill2" label="技能2" width="150">
+          <el-table-column model-key="skill2" label="工作能力" width="150">
           </el-table-column>
-          <el-table-column label="多选操作" width="100">
-            <el-checkbox [model]="val" (modelChange)="handle($event)">&nbsp;</el-checkbox>
+          <el-table-column label="多选操作" width="125">
+            <ng-template #slot let-scope="scope">
+              <el-checkbox></el-checkbox>
+            </ng-template>
           </el-table-column>
           <!--
           <el-table-column label="操作" width="120">
             <ng-template #slot let-scope="scope">
               <el-button type="text" size="small" (click)="handle(scope)">删除</el-button>
             </ng-template>
+          </el-table-column>-->
+        </el-table>
+        <el-table [model]="tableData2" [scroll-x]="true" center="all" [stripe]="true" [show-header]="false" id="tab-skill1" style="display: none;">
+          <el-table-column model-key="rank" label="综合排名" width="150">
           </el-table-column>
- -->
+          <el-table-column model-key="name" label="姓名" width="150">
+          </el-table-column>
+          <el-table-column model-key="skill1" label="学习能力" width="150" class="el-icon-d-caret">
+          </el-table-column>
+          <el-table-column model-key="skill2" label="工作能力" width="150">
+          </el-table-column>
+          <el-table-column label="多选操作" width="125">
+            <ng-template #slot let-scope="scope">
+              <el-checkbox></el-checkbox>
+            </ng-template>
+          </el-table-column>
+        </el-table>
+        <el-table [model]="tableData3" [scroll-x]="true" center="all" [stripe]="true" [show-header]="false" id="tab-skill2" style="display: none;">
+          <el-table-column model-key="rank" label="综合排名" width="150">
+          </el-table-column>
+          <el-table-column model-key="name" label="姓名" width="150">
+          </el-table-column>
+          <el-table-column model-key="skill1" label="学习能力" width="150" class="el-icon-d-caret">
+          </el-table-column>
+          <el-table-column model-key="skill2" label="工作能力" width="150">
+          </el-table-column>
+          <el-table-column label="多选操作" width="125">
+            <ng-template #slot let-scope="scope">
+              <el-checkbox></el-checkbox>
+            </ng-template>
+          </el-table-column>
         </el-table>
         <el-pagination [total]="500" [page-size]="20" [layout]="['prev', 'pager', 'next', 'jumper']">
         </el-pagination>
         <br>
         <br>
       </div>
+      <div el-col span="1"></div>
       <div el-col span="3">
-        <el-button type="success">申请招工</el-button>
+        <el-button type="success" style="margin-top: 50px;">申请招工</el-button>
         <br>
         <br>
         <el-button type="success">导出报告</el-button>
@@ -133,10 +210,13 @@
         <h5>Tips:</h5>
         <p>此表是根据总分由高到</p>
         <p>低进行排名的，您可以</p>
-        <p>选择多项信息，点“导</p>
-        <p>出报告”按钮导出数据。</p>
+        <p>选择多项信息，点击“</p>
+        <p>导出报告”按钮导出数据。</p>
         <P></P>
       </div>
+    </div>
+    <div el-row>
+      <h3 style="text-align: center;display: block;margin: 100px;">copyright@2018 《杭州电子科技大学》 我想吃鸡</h3>
     </div>
   </div>
 </div>

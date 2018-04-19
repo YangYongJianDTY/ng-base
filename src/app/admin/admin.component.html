@@ -4,6 +4,7 @@
   </div>
   <div el-main>
     <h2>模型库：</h2>
+    <h3>&nbsp;</h3>
     <el-button [plain]="true" type="success" size="mini" icon="plus">添加模型</el-button>
     <el-card>
       所有类别:
@@ -17,22 +18,24 @@
               {{tag.name}}
             </el-tag>
           </el-card>
-          <el-button [plain]="true" type="success" size="mini" icon="edit">添加实例</el-button>
+          <el-button [plain]="true" type="success" size="mini" icon="plus">添加实例</el-button>
         </el-dialog>
       </div>
     </el-card>
   </div>
   <div el-main style="height: 800px;">
     <h2>评分库：</h2>
+    <h3>&nbsp;</h3>
     <div el-row>
       <div el-col offset="1" span="20">
-        <h3>1.技术能力</h3>
+        <h3>1.技术能力(请选择对应的技术模型)</h3>
+        <h3>&nbsp;</h3>
         <div>
           <span>JAVA:</span>
           <el-cascader [options]="options" [all-levels]="false" (modelChange)="changeHandle($event)" size="mini">
           </el-cascader>
         </div>
-        <div>
+        <div style="margin: 5px 0;">
           <span>C++:</span>
           <el-cascader [options]="options" [all-levels]="false" (modelChange)="changeHandle($event)" size="mini">
           </el-cascader>
@@ -46,15 +49,16 @@
     </div>
     <div el-row>
       <div el-col offset="1" span="20">
-        <h3>2.评分方法</h3>
-        <el-button [plain]="true" type="success" size="mini" icon="add">添加评分方法</el-button>
+        <h3>2.评分方法(请选择对应的评分模型)</h3>
+        <h3>&nbsp;</h3>
+        <el-button [plain]="true" type="success" size="mini" icon="plus">添加评分方法</el-button>
         <el-card>
           <div class="box-card" #card2>
             <el-tag *ngFor="let tag of temps" [closable]="true" [type]="tag.type" (close)="tagAlert()" (click)="card2.toggle = true">
               {{tag.name}}
             </el-tag>
             <el-dialog [title]="'创造力'" [(visible)]="card2.toggle" [center]="true" width="400px">
-              <el-button [plain]="true" type="success" size="mini" icon="add">添加子项</el-button>
+              <el-button [plain]="true" type="success" size="mini" icon="plus">添加子项</el-button>
               <el-button [plain]="true" type="success" size="mini" icon="edit">修改权重</el-button>
               <el-card>
                 <el-collapse [model]="[1]" [accordion]="true">
@@ -103,7 +107,8 @@
       <div el-row>
         <div el-col offset="1" span="20">
           <h3>3.判断方法</h3>
-          <el-button [plain]="true" type="success" size="mini" icon="add">添加判断方法</el-button>
+          <h3>&nbsp;</h3>
+          <el-button [plain]="true" type="success" size="mini" icon="plus">添加判断方法</el-button>
           <el-card>
             <div class="box-card" #card3>
               <el-tag *ngFor="let tag of temps" [closable]="true" [type]="tag.type" (close)="tagAlert()" (click)="card3.toggle = true">
@@ -125,6 +130,9 @@
           </el-card>
         </div>
       </div>
+    </div>
+    <div el-row>
+      <h3 style="text-align: center;display: block;margin-top: 100px;">copyright@2018 《杭州电子科技大学》 我想吃鸡</h3>
     </div>
   </div>
 </div>
