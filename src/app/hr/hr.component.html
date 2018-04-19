@@ -4,14 +4,14 @@
   <div el-main>
     <div el-row>
       <h3>人才池：</h3>
+      <h4>（点击职位可查看详情哦）</h4>
     </div>
     <div el-row gutter="40" type="flex" class="" justify="space-around">
       <div el-col span="4">
         <div class="grid-content">
           <el-button type="success">
             <span class="btn-info">新手无职称</span>
-            <span class="btn-info">现有人员：120人</span>
-            <span class="btn-info">需要数量：120人</span>
+            <span class="btn-info">120人</span>
           </el-button>
         </div>
       </div>
@@ -19,8 +19,7 @@
         <div class="grid-content">
           <el-button type="success">
             <span class="btn-info">初级程序员</span>
-            <span class="btn-info">现有人员：120人</span>
-            <span class="btn-info">需要数量：120人</span>
+            <span class="btn-info">120人</span>
           </el-button>
         </div>
       </div>
@@ -28,8 +27,7 @@
         <div class="grid-content">
           <el-button type="danger">
             <span class="btn-info">中级程序员</span>
-            <span class="btn-info">现有人员：100人</span>
-            <span class="btn-info">需要数量：120人</span>
+            <span class="btn-info">100人<span style="color:;">(缺20人)</span></span>
           </el-button>
         </div>
       </div>
@@ -37,16 +35,15 @@
         <div class="grid-content">
           <el-button type="success">
             <span class="btn-info">高级程序员</span>
-            <span class="btn-info">现有人员：120人</span>
-            <span class="btn-info">需要数量：120人</span></el-button>
+            <span class="btn-info">120人</span>
+          </el-button>
         </div>
       </div>
       <div el-col span="4">
         <div class="grid-content">
           <el-button type="danger">
             <span class="btn-info">资深程序员</span>
-            <span class="btn-info">现有人员：100人</span>
-            <span class="btn-info">需要数量：120人</span>
+            <span class="btn-info">100人<span style="color:;">(缺20人)</span></span>
           </el-button>
         </div>
       </div>
@@ -57,8 +54,7 @@
         <div class="grid-content">
           <el-button type="success">
             <span class="btn-info">初级测试员</span>
-            <span class="btn-info">现有人员：120人</span>
-            <span class="btn-info">需要数量：120人</span>
+            <span class="btn-info">120人</span>
           </el-button>
         </div>
       </div>
@@ -66,8 +62,7 @@
         <div class="grid-content">
           <el-button type="success">
             <span class="btn-info">高级测试员</span>
-            <span class="btn-info">现有人员：120人</span>
-            <span class="btn-info">需要数量：120人</span>
+            <span class="btn-info">120人</span>
           </el-button>
         </div>
       </div>
@@ -75,8 +70,7 @@
         <div class="grid-content">
           <el-button type="success">
             <span class="btn-info">系统架构师</span>
-            <span class="btn-info">现有人员：120人</span>
-            <span class="btn-info">需要数量：120人</span>
+            <span class="btn-info">120人</span>
           </el-button>
         </div>
       </div>
@@ -92,6 +86,7 @@
         <div class="grid-content">
           <el-button [plain]="true" type="info" [round]="true">意向人员投稿</el-button>
         </div>
+        <span>点击上方按钮，您就可以查看申请职位的意向人员的投稿了。</span>
       </div>
     </div>
   </div>
@@ -109,7 +104,7 @@
           </el-table-column>
           <el-table-column model-key="skill2" label="技能2" width="150">
           </el-table-column>
-          <el-table-column label="操作" width="100">
+          <el-table-column label="多选操作" width="100">
             <el-checkbox [model]="val" (modelChange)="handle($event)">&nbsp;</el-checkbox>
           </el-table-column>
           <!--
@@ -123,8 +118,19 @@
         <el-pagination [total]="500" [page-size]="20" [layout]="['prev', 'pager', 'next', 'jumper']">
         </el-pagination>
         <br>
-        <el-button type="info">导出报告</el-button>
         <br>
+      </div>
+      <div el-col span="3">
+        <br>
+        <el-button type="success">导出报告</el-button>
+        <br>
+        <br>
+        <h5>Tips:</h5>
+        <p>此表是根据总分由高到</p>
+        <p>低进行排名的，您可以</p>
+        <p>选择多项信息，点“导</p>
+        <p>出报告”按钮导出数据。</p>
+        <P></P>
       </div>
     </div>
   </div>

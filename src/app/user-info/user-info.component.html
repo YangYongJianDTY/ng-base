@@ -1,109 +1,129 @@
 <div el-container direction="vertical" class="demo-box mid-outlet">
   <div el-headern class="first-title">
     <h1>个人主页</h1></div>
-  <div el-main>
-    <div el-row>
-      <h3>职业规划：</h3></div>
-    <div el-row gutter="40" type="flex" class="" justify="space-around">
-      <div el-col span="4">
-        <div class="grid-content">
-          <div class="box-card" #card>
-            <el-button type="success" (click)="card.toggle = true">初级程序员</el-button>
-            <el-dialog [title]="'初级程序员要求'" [(visible)]="card.toggle" [center]="true">
-              <el-collapse [model]="[1]" [accordion]="true">
-                <el-collapse-item label="三年工作经验" value="1">
-                  <ng-template #label>
-                    三年工作经验<i class="header-icon el-icon-information"></i>
-                  </ng-template>
-                  <el-card>
-                    <h5 class="card-title">提高方法</h5>
-                    <ul class="card-ul">
-                      <li>参加课程A</li>
-                      <li>阅读书籍B</li>
-                      <li>练习项目C</li>
-                    </ul>
-                  </el-card>
-                </el-collapse-item>
-                <el-collapse-item label="JAVA达到80分" value="2">
-                  <ng-template #label>
-                    JAVA达到80分<span class="faild">(我的JAVA只有70分)</span>
-                  </ng-template>
-                  <el-card>
-                    <h5 class="card-title">提高方法</h5>
-                    <ul class="card-ul">
-                      <li>参加课程A</li>
-                      <li>阅读书籍B</li>
-                      <li>练习项目C</li>
-                    </ul>
-                  </el-card>
-                </el-collapse-item>
-                <el-collapse-item label="创造力达到80分" value="3">
-                  <ng-template #label>
-                    一致性 Consistency<i class="header-icon el-icon-information"></i>
-                  </ng-template>
-                  <el-card>
-                    <h5 class="card-title">提高方法</h5>
-                    <ul class="card-ul">
-                      <li>参加课程A</li>
-                      <li>阅读书籍B</li>
-                      <li>练习项目C</li>
-                    </ul>
-                  </el-card>
-                </el-collapse-item>
-                <el-collapse-item label="MySql达到60分" value="4">
-                  <ng-template #label>
-                    一致性 Consistency<i class="header-icon el-icon-information"></i>
-                  </ng-template>
-                  <el-card>
-                    <h5 class="card-title">提高方法</h5>
-                    <ul class="card-ul">
-                      <li>参加课程A</li>
-                      <li>阅读书籍B</li>
-                      <li>练习项目C</li>
-                    </ul>
-                  </el-card>
-                </el-collapse-item>
-              </el-collapse>
-            </el-dialog>
+  <div el-container class="demo-box">
+    <div el-main style="background: url(b1.png);">
+      <div el-row>
+        <h3>职业规划：</h3>
+      </div>
+      <div el-row gutter="40" type="flex" class="" justify="space-around">
+        <div el-col span="4">
+          <div class="grid-content">
+            <div class="box-card" #card>
+              <el-tooltip placement="top" effect="dark">
+                <el-button type="success" (click)="card.toggle = true">初级程序员</el-button>
+                <ng-template #tip>
+                  <span>点击查看详情</span>
+                </ng-template>
+              </el-tooltip>
+              <el-dialog [title]="'初级程序员要求'" [(visible)]="card.toggle" [center]="true" width="400px">
+                <el-collapse [model]="[1]" [accordion]="true">
+                  <el-collapse-item label="三年工作经验" value="1">
+                    <ng-template #label>
+                      三年工作经验<i class="header-icon el-icon-information"></i>
+                    </ng-template>
+                    <el-card>
+                      <h5 class="card-title">提高方法</h5>
+                      <ul class="card-ul">
+                        <li>参加课程A</li>
+                        <li>阅读书籍B</li>
+                        <li>练习项目C</li>
+                      </ul>
+                    </el-card>
+                  </el-collapse-item>
+                  <el-collapse-item label="JAVA达到80分" value="2">
+                    <ng-template #label>
+                      JAVA达到80分<span class="faild">(我的JAVA只有70分)</span>
+                    </ng-template>
+                    <el-card>
+                      <h5 class="card-title">提高方法</h5>
+                      <ul class="card-ul">
+                        <li>参加课程A</li>
+                        <li>阅读书籍B</li>
+                        <li>练习项目C</li>
+                      </ul>
+                    </el-card>
+                  </el-collapse-item>
+                  <el-collapse-item label="创造力达到80分" value="3">
+                    <ng-template #label>
+                      一致性 Consistency<i class="header-icon el-icon-information"></i>
+                    </ng-template>
+                    <el-card>
+                      <h5 class="card-title">提高方法</h5>
+                      <ul class="card-ul">
+                        <li>参加课程A</li>
+                        <li>阅读书籍B</li>
+                        <li>练习项目C</li>
+                      </ul>
+                    </el-card>
+                  </el-collapse-item>
+                  <el-collapse-item label="MySql达到60分" value="4">
+                    <ng-template #label>
+                      一致性 Consistency<i class="header-icon el-icon-information"></i>
+                    </ng-template>
+                    <el-card>
+                      <h5 class="card-title">提高方法</h5>
+                      <ul class="card-ul">
+                        <li>参加课程A</li>
+                        <li>阅读书籍B</li>
+                        <li>练习项目C</li>
+                      </ul>
+                    </el-card>
+                  </el-collapse-item>
+                </el-collapse>
+              </el-dialog>
+            </div>
+          </div>
+        </div>
+        <div el-col span="4">
+          <div class="grid-content">
+            <el-tooltip placement="top" effect="dark">
+              <el-button type="success">中级程序员</el-button>
+              <ng-template #tip>
+                <span>点击查看详情</span>
+              </ng-template>
+            </el-tooltip>
+          </div>
+        </div>
+        <div el-col span="4">
+          <div class="grid-content">
+            <el-button type="success">高级程序员</el-button>
+          </div>
+        </div>
+        <div el-col span="4">
+          <div class="grid-content">
+            <el-button type="success">资深程序员</el-button>
           </div>
         </div>
       </div>
-      <div el-col span="4">
-        <div class="grid-content">
-          <el-button type="success">中级程序员</el-button>
+      <div el-row style="height: 20px;"></div>
+      <div el-row gutter="40" type="flex" class="" justify="space-around">
+        <div el-col span="4">
+          <div class="grid-content">
+            <el-button type="success">初级测试员</el-button>
+          </div>
         </div>
-      </div>
-      <div el-col span="4">
-        <div class="grid-content">
-          <el-button type="success">高级程序员</el-button>
+        <div el-col span="4">
+          <div class="grid-content">
+            <el-button type="success">高级测试员</el-button>
+          </div>
         </div>
-      </div>
-      <div el-col span="4">
-        <div class="grid-content">
-          <el-button type="success">资深程序员</el-button>
+        <div el-col span="4">
+          <div class="grid-content">
+            <el-button type="success">&nbsp;&nbsp;&nbsp;架构师&nbsp;&nbsp;&nbsp;&nbsp;</el-button>
+          </div>
+        </div>
+        <div el-col span="4">
+          <div class="grid-content"></div>
         </div>
       </div>
     </div>
-    <div el-row style="height: 20px;"></div>
-    <div el-row gutter="40" type="flex" class="" justify="space-around">
-      <div el-col span="4">
-        <div class="grid-content">
-          <el-button type="success">初级测试员</el-button>
-        </div>
-      </div>
-      <div el-col span="4">
-        <div class="grid-content">
-          <el-button type="success">高级测试员</el-button>
-        </div>
-      </div>
-      <div el-col span="4">
-        <div class="grid-content">
-          <el-button type="success">&nbsp;&nbsp;&nbsp;架构师&nbsp;&nbsp;&nbsp;&nbsp;</el-button>
-        </div>
-      </div>
-      <div el-col span="4">
-        <div class="grid-content"></div>
-      </div>
+    <div el-asside class="demo-box">
+      <h5 style="margin-top: 50px">Tips:</h5>
+      <p>点击职位可以查看职位</p>
+      <p>要求，如果未达到要求</p>
+      <p>，可以选择相关的课程</p>
+      <p>进行学习哦。</p>
     </div>
   </div>
   <div el-footer>
@@ -112,43 +132,80 @@
     <div el-row gutter="" type="flex" class="row-bg" justify="space-around">
       <div el-col span="5">
         <el-card>
-          <h5 class="card-title">个人信息</h5>
+          <h3 class="card-title">个人信息</h3>
           <ul class="card-ul">
             <li>姓名：张三</li>
             <li>职位：中级程序员</li>
             <li>邮箱：123456@163.com</li>
+            <li>
+              <el-button [plain]="true" type="info" size="mini" icon="info">点击查看个人简历</el-button>
+            </li>
           </ul>
+          <div gutter="20px" el-row type="flex" justify="end">
+            <div el-col span="12">
+              <!-- <el-button [plain]="true" type="success" size="mini" icon="edit">修改信息</el-button> -->
+            </div>
+            <div el-col span="12">
+              <el-button [plain]="true" type="success" size="mini" icon="more">查看更多</el-button>
+            </div>
+          </div>
         </el-card>
       </div>
       <div el-col span="5">
         <el-card>
-          <h5 class="card-title">职业信息</h5>
+          <h3 class="card-title">职业信息</h3>
           <ul class="card-ul">
             <li>入职时间：2018年1月1日</li>
             <li>级别：5级</li>
             <li>部门：市场部</li>
+            <li>曾任职公司：华为</li>
           </ul>
+          <div gutter="20px" el-row type="flex" justify="end">
+            <div el-col span="12">
+              <!-- <el-button [plain]="true" type="success" size="mini" icon="edit">修改信息</el-button> -->
+            </div>
+            <div el-col span="12">
+              <el-button [plain]="true" type="success" size="mini" icon="more">查看更多</el-button>
+            </div>
+          </div>
         </el-card>
       </div>
       <div el-col span="5">
         <el-card>
-          <h5 class="card-title">技能信息</h5>
+          <h3 class="card-title">技能信息</h3>
           <ul class="card-ul">
             <li>C++：80分</li>
             <li>JAVA：70分（三年经验）</li>
             <li>MySql：60分（两年经验）</li>
+            <li>数据结构：80分</li>
           </ul>
+          <div gutter="20px" el-row type="flex" justify="end">
+            <div el-col span="12">
+              <el-button [plain]="true" type="success" size="mini" icon="edit">重新测试</el-button>
+            </div>
+            <div el-col span="12">
+              <el-button [plain]="true" type="success" size="mini" icon="more">查看更多</el-button>
+            </div>
+          </div>
         </el-card>
       </div>
       <div el-col span="5">
         <el-card>
-          <h5 class="card-title">能力评估</h5>
+          <h3 class="card-title">能力评估</h3>
           <ul class="card-ul">
             <li>创造力-企业评分：80分</li>
             <li>创造力-模型A评分：70分</li>
             <li>领导力-企业评分：70分</li>
             <li>领导力-模型B评分：80分</li>
           </ul>
+          <div gutter="20px" el-row type="flex" justify="end">
+            <div el-col span="12">
+              <el-button [plain]="true" type="success" size="mini" icon="edit">重新测评</el-button>
+            </div>
+            <div el-col span="12">
+              <el-button [plain]="true" type="success" size="mini" icon="more">查看更多</el-button>
+            </div>
+          </div>
         </el-card>
       </div>
     </div>

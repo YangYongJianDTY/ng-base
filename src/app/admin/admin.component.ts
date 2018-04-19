@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+ import { ElMessageService } from 'element-angular';
 
 @Component({
   selector: 'app-admin',
@@ -7,84 +8,102 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminComponent implements OnInit {
 
-  constructor() { }
+  constructor(private message: ElMessageService) {
+   }
 
   ngOnInit() {
   }
 
-  data: any = [{
-    label: '所有模型',
-    children: [{
-      label: '个人能力模型',
-      children: [{
-        label: '适应能力模型',
-      },
-      {
-        label: '应变能力模型',
-      },
-      {
-        label: '抗压能力模型',
-      }]
-    },{
-      label: '技术能力模型',
-      children: [{
-        label: 'JAVA',
-      },
-      {
-        label: 'C++',
-      },
-      {
-        label: 'MySql',
-      }]
+  tagAlert(): void {
+      this.message.show('确要定删除这个类别吗？')
+  }
 
-    }]
+  tagAlert2(): void {
+      this.message.show('确要定删除这个实例吗？')
+  }
+
+  showTemp(): void {
+      //this.message.show('确要定删除这个类别吗？')
+  }
+
+  options: any[] = [{
+    value: 'zhinan',
+    label: '指南',
+    children: [{
+      value: 'shejiyuanze',
+      label: '设计原则',
+      children: [{
+        value: 'yizhi',
+        label: '一致',
+      }, {
+        value: 'fankui',
+        label: '反馈',
+      }, {
+        value: 'xiaolv',
+        label: '效率',
+      }, {
+        value: 'kekong',
+        label: '可控',
+      }],
+    }],
+  }, {
+    value: 'zujian',
+    label: '组件',
+    children: [{
+      value: 'layout',
+      label: 'Layout 布局',
+    }, {
+      value: 'color',
+      label: 'Color 色彩',
+    }, {
+      value: 'typography',
+      label: 'Typography 字体',
+    }],
+  }, {
+    value: 'form',
+    label: 'Form',
+    children: [{
+      value: 'radio',
+      label: 'Radio 单选框',
+    }, {
+      value: 'checkbox',
+      label: 'Checkbox 多选框',
+    }, {
+      value: 'input',
+      label: 'Input 输入框',
+    }, {
+      value: 'input-number',
+      label: 'InputNumber 计数器',
+    }, {
+      value: 'select',
+      label: 'Select 选择器',
+    }, {
+      value: 'cascader',
+      label: 'Cascader 级联选择器',
+    }],
   }]
 
-  data2: any = [{
-    label: '创造力',
-    children: [{
-      label: '个人创造力',
-      children: [{
-        label: '及时创造力',
-      },
-      {
-        label: '长时创造力',
-      }]
-    },{
-      label: '团队创造力',
-      children: [{
-        label: '多人创造力',
-      },
-      {
-        label: '少人创造力',
-      }]
-    }]
-  }]
+  temps: any = [
+    { name: '创造力', type: 'success'
+    },{ name: '反应能力', type: 'success'
+    },{ name: '沟通能力', type: 'success'
+    },{ name: '判断力', type: 'success'
+    },{ name: '元胜能力', type: 'success'
+    },{ name: '员工知识能力', type: 'success'
+    },{ name: '员工组织能力', type: 'success'
+    },{ name: '自信心', type: 'success'
+    },{ name: '阻组织情绪能力', type: 'success'
+    },{ name: '情绪能力', type: 'success' }]
 
-  data3: any = [{
-    label: '创造力',
-    children: [{
-      label: '个人创造力',
-      children: [{
-        label: '及时创造力',
-      },
-      {
-        label: '长时创造力',
-      }]
-    },{
-      label: '团队创造力',
-      children: [{
-        label: '多人创造力',
-      },
-      {
-        label: '少人创造力',
-      }]
-    }]
-  }]
-
-  lets: any = [{value: '选项1',label: '黄金糕' },
-    { value: '选项2', label: '双皮奶' },
-    { elDisabled: true, value: '选项3', label: '蚵仔煎' },
-    { value: '选项4', label: '龙须面' },
-    { value: '选项5', label: '北京烤鸭' }]
+  moxingtemps: any = [
+    { name: '实例1', type: 'success'
+    },{ name: '实例1', type: 'success'
+    },{ name: '实例1', type: 'success'
+    },{ name: '实例1', type: 'success'
+    },{ name: '实例1', type: 'success'
+    },{ name: '实例1', type: 'success'
+    },{ name: '实例1', type: 'success'
+    },{ name: '实例1', type: 'success'
+    },{ name: '实例1', type: 'success'
+    },{ name: '实例1', type: 'success' }]
 }

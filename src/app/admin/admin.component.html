@@ -3,47 +3,128 @@
     <h1>知识库</h1>
   </div>
   <div el-main>
-    <div el-row>
-      <h2>模型库：</h2>
-      <el-tree [model]="data">
-      </el-tree>
-    </div>
+    <h2>模型库：</h2>
+    <el-button [plain]="true" type="success" size="mini" icon="plus">添加模型</el-button>
+    <el-card>
+      所有类别:
+      <div class="box-card" #card>
+        <el-tag *ngFor="let tag of temps" [closable]="true" [type]="tag.type" (close)="tagAlert()" (click)="card.toggle = true">
+          {{tag.name}}
+        </el-tag>
+        <el-dialog [title]="'模型实例'" [(visible)]="card.toggle" [center]="true" width="400px">
+          <el-card>
+            <el-tag *ngFor="let tag of moxingtemps" [closable]="true" [type]="tag.type" (close)="tagAlert2()">
+              {{tag.name}}
+            </el-tag>
+          </el-card>
+          <el-button [plain]="true" type="success" size="mini" icon="edit">添加实例</el-button>
+        </el-dialog>
+      </div>
+    </el-card>
   </div>
-  <div el-main>
+  <div el-main style="height: 800px;">
     <h2>评分库：</h2>
     <div el-row>
       <div el-col offset="1" span="20">
         <h3>1.技术能力</h3>
         <div>
           <span>JAVA:</span>
-          <el-select [model]="'选项2'" size="mini">
-            <el-option *ngFor="let item of lets" [label]="item.label" [value]="item.value">
-            </el-option>
-          </el-select>
+          <el-cascader [options]="options" [all-levels]="false" (modelChange)="changeHandle($event)" size="mini">
+          </el-cascader>
         </div>
         <div>
           <span>C++:</span>
-          <el-select [model]="'选项2'" size="mini">
-            <el-option *ngFor="let item of lets" [label]="item.label" [value]="item.value">
-            </el-option>
-          </el-select>
+          <el-cascader [options]="options" [all-levels]="false" (modelChange)="changeHandle($event)" size="mini">
+          </el-cascader>
+        </div>
+        <div>
+          <span>MySql:</span>
+          <el-cascader [options]="options" [all-levels]="false" (modelChange)="changeHandle($event)" size="mini">
+          </el-cascader>
         </div>
       </div>
     </div>
     <div el-row>
       <div el-col offset="1" span="20">
         <h3>2.评分方法</h3>
-        <el-tree [model]="data2">
-        </el-tree>
+        <el-button [plain]="true" type="success" size="mini" icon="add">添加评分方法</el-button>
+        <el-card>
+          <div class="box-card" #card2>
+            <el-tag *ngFor="let tag of temps" [closable]="true" [type]="tag.type" (close)="tagAlert()" (click)="card2.toggle = true">
+              {{tag.name}}
+            </el-tag>
+            <el-dialog [title]="'创造力'" [(visible)]="card2.toggle" [center]="true" width="400px">
+              <el-button [plain]="true" type="success" size="mini" icon="add">添加子项</el-button>
+              <el-button [plain]="true" type="success" size="mini" icon="edit">修改权重</el-button>
+              <el-card>
+                <el-collapse [model]="[1]" [accordion]="true">
+                  <el-collapse-item label="创造力" value="1">
+                    <ng-template #label>
+                      个人创造力（权重：0.5）
+                    </ng-template>
+                    <el-card>
+                      <ul class="card-ul" style="height: 250px;">
+                        <li>及时创造力（权重：0.2)
+                          <el-cascader [options]="options" [all-levels]="false" (modelChange)="changeHandle($event)" size="mini">
+                          </el-cascader>
+                        </li>
+                        <li>长时创造力（权重：0.3)
+                          <el-cascader [options]="options" [all-levels]="false" (modelChange)="changeHandle($event)" size="mini">
+                          </el-cascader>
+                        </li>
+                      </ul>
+                    </el-card>
+                  </el-collapse-item>
+                  <el-collapse-item label="JAVA达到80分" value="2">
+                    <ng-template #label>
+                      团队创造力（权重：0.5）
+                    </ng-template>
+                    <el-card>
+                      <ul class="card-ul">
+                        <li>多人创造力（权重：0.2)
+                          <el-cascader [options]="options" [all-levels]="false" (modelChange)="changeHandle($event)" size="mini">
+                          </el-cascader>
+                        </li>
+                        <li>少人创造力（权重：0.3)
+                          <el-cascader [options]="options" [all-levels]="false" (modelChange)="changeHandle($event)" size="mini">
+                          </el-cascader>
+                        </li>
+                      </ul>
+                    </el-card>
+                  </el-collapse-item>
+                </el-collapse>
+              </el-card>
+            </el-dialog>
+          </div>
+        </el-card>
       </div>
     </div>
     <div el-row>
       <div el-row>
         <div el-col offset="1" span="20">
           <h3>3.判断方法</h3>
+          <el-button [plain]="true" type="success" size="mini" icon="add">添加判断方法</el-button>
+          <el-card>
+            <div class="box-card" #card3>
+              <el-tag *ngFor="let tag of temps" [closable]="true" [type]="tag.type" (close)="tagAlert()" (click)="card3.toggle = true">
+                {{tag.name}}
+              </el-tag>
+              <el-dialog [title]="'工作经验'" [(visible)]="card3.toggle" [center]="true" width="400px">
+                <el-card>
+                  <p>if(CET4
+                    < <el-input size="mini" placeholder="60" [model]="input2" width="50px">
+                      </el-input>) 不合格;</p>
+                  <p>else if(工作时间
+                    < <el-input size="mini" placeholder="60" [model]="input3">
+                      </el-input>) 不合格;</p>
+                  <p>else 合格;</p>
+                </el-card>
+                <el-button [plain]="true" type="success" size="mini" icon="save">保存修改</el-button>
+              </el-dialog>
+            </div>
+          </el-card>
         </div>
-      </div>
-      <div el-row>
       </div>
     </div>
   </div>
+</div>
