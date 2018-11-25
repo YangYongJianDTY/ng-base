@@ -1,5 +1,5 @@
 import {AfterViewInit, Component, OnInit} from '@angular/core';
-import {ROOT_VIDEO_URL} from '../../config';
+//import {ROOT_VIDEO_URL} from '../../../config';
 
 @Component({
   selector: 'app-video',
@@ -32,7 +32,7 @@ export class VideoComponent implements OnInit, AfterViewInit {
    */
   playM3u8(url, div) {
     const flashvars = {
-      f: ROOT_VIDEO_URL + 'assets/ckplayer/m3u8/m3u8.swf',
+      f: /*ROOT_VIDEO_URL*/ + 'assets/ckplayer/m3u8/m3u8.swf',
       a: url,
       s: 4, // SWF视频流形式，此时f='一个swf文件
       c: 0
@@ -41,7 +41,7 @@ export class VideoComponent implements OnInit, AfterViewInit {
     const video = [url];
     const w = Math.floor(844);
     const h = Math.floor(w * 3 / 5);
-    CKobject.embed(ROOT_VIDEO_URL + 'assets/ckplayer/ckplayer.swf', div, 'ckplayer_a1', w, h, false, flashvars, video, params);
+    CKobject.embed(/*ROOT_VIDEO_URL*/ + 'assets/ckplayer/ckplayer.swf', div, 'ckplayer_a1', w, h, false, flashvars, video, params);
   }
 
 
@@ -56,7 +56,7 @@ export class VideoComponent implements OnInit, AfterViewInit {
     const video = [url];
     const w = Math.floor(844);
     const h = Math.floor(w * 3 / 5);
-    CKobject.embed(ROOT_VIDEO_URL + 'assets/ckplayer/ckplayer.swf', div, 'ckplayer_a1', w, h, false, flashvars, video, params);
+    CKobject.embed(/*ROOT_VIDEO_URL*/ + 'assets/ckplayer/ckplayer.swf', div, 'ckplayer_a1', w, h, false, flashvars, video, params);
   }
 
   playRtmp(url, div) {
@@ -70,7 +70,7 @@ export class VideoComponent implements OnInit, AfterViewInit {
     const video = [url];
     const w = Math.floor(844);
     const h = Math.floor(w * 3 / 5);
-    CKobject.embed(ROOT_VIDEO_URL + 'assets/ckplayer/ckplayer.swf', div, 'ckplayer_a1', w, h, false, flashvars, video, params);
+    CKobject.embed(/*ROOT_VIDEO_URL*/ + 'assets/ckplayer/ckplayer.swf', div, 'ckplayer_a1', w, h, false, flashvars, video, params);
   }
 
   private videoM3u8() {

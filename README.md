@@ -1,13 +1,12 @@
 
 
 # 项目简介
-angular-base是一个以angular5.21为基础的，帮助企业快速开发的种子项目。
-> 该项目是帮助企业快速开发使用的种子项目，如果你是新手，上手该项目可能不是一个很好的选择。
+汽车4S店管理系统是一个以angular5.21为基础的快速开发项目。
 
 
 项目地址：
 
-- github：  https://github.com/liepeng328/angular-base
+- github：  https://github.com/YangYongJianDTY/ng-base/
 
 # 集成的开源插件
 - [jQuary](https://jquery.com/)

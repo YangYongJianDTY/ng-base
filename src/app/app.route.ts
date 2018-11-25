@@ -1,23 +1,42 @@
-import {MidComponent} from './mid/mid.component';
 import {Routes} from '@angular/router';
-import {NzZorroComponent} from './nz-zorro/nz-zorro.component';
-import {NzZorroTempComponent} from './nz-zorro-temp/nz-zorro-temp.component';
-import {ElementComponent} from './element/element.component';
-import {UserInfoComponent} from './user-info/user-info.component';
-import { HrComponent } from './hr/hr.component';
-import { AdminComponent } from './admin/admin.component';
-import { JobInfoComponent } from './job-info/job-info.component';
+// import {MidComponent} from './mid/mid.component';
+// import {NzZorroComponent} from './nz-zorro/nz-zorro.component';
+// import {NzZorroTempComponent} from './nz-zorro-temp/nz-zorro-temp.component';
+// import {ElementComponent} from './element/element.component';
+// import {UserInfoComponent} from './user-info/user-info.component';
+// import { HrComponent } from './hr/hr.component';
+// import { AdminComponent } from './admin/admin.component';
+// import { JobInfoComponent } from './job-info/job-info.component';
+
+import { IndexComponent } from './index/index.component';
+import { YuyueComponent } from './yuyue/yuyue.component';
+import { KefuComponent } from './kefu/kefu.component';
+import { ChekuangComponent } from './chekuang/chekuang.component';
+
 
 export const appRoutes: Routes = [
   {
     path: 'index',
-    component: MidComponent,
+    component: IndexComponent,
   },
   {
-    path: 'demo',
-    loadChildren: 'app/demo/demo.module#DemoModule',
+    path: 'yuyue',
+    component: YuyueComponent,
   },
   {
+    path: 'chekuang',
+    component: ChekuangComponent,
+  },
+  {
+    path: 'kefu',
+    component: KefuComponent,
+  },
+  {
+    path: 'zhanghao',
+    loadChildren: 'app/zhanghao/zhanghao.module#ZhanghaoModule',
+  },
+//测试路径
+/*{
     path: 'nz-zorro',
     component: NzZorroComponent,
   },
@@ -45,6 +64,7 @@ export const appRoutes: Routes = [
     path: 'job-info',
     component: JobInfoComponent,
   },
+*/
 
   /*
   * （''）表示应用的默认路径，当URL为空时就会访问那里，因此它通常会作为起点。
