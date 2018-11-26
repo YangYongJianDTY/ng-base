@@ -12,6 +12,8 @@ import { IndexComponent } from './index/index.component';
 import { YuyueComponent } from './yuyue/yuyue.component';
 import { KefuComponent } from './kefu/kefu.component';
 import { ChekuangComponent } from './chekuang/chekuang.component';
+import { LoginComponent } from './zhanghao/login/login.component';
+import { RegisterComponent } from './zhanghao/register/register.component';
 
 
 export const appRoutes: Routes = [
@@ -32,39 +34,13 @@ export const appRoutes: Routes = [
     component: KefuComponent,
   },
   {
-    path: 'zhanghao',
-    loadChildren: 'app/zhanghao/zhanghao.module#ZhanghaoModule',
-  },
-//测试路径
-/*{
-    path: 'nz-zorro',
-    component: NzZorroComponent,
+    path: 'login',
+    component: LoginComponent,
   },
   {
-    path: 'nz-zorro-temp',
-    component: NzZorroTempComponent,
+    path: 'register',
+    component: RegisterComponent,
   },
-  {
-    path: 'element',
-    component: ElementComponent,
-  },
-  {
-    path: 'user-info',
-    component: UserInfoComponent,
-  },
-  {
-    path: 'hr',
-    component: HrComponent,
-  },
-  {
-    path: 'admin',
-    component: AdminComponent,
-  },
-  {
-    path: 'job-info',
-    component: JobInfoComponent,
-  },
-*/
 
   /*
   * （''）表示应用的默认路径，当URL为空时就会访问那里，因此它通常会作为起点。

@@ -12,41 +12,27 @@ import {StoreDataService} from './store-data.service';
 import {RouterModule} from '@angular/router';
 import {appRoutes} from './app.route';
 import {AppNavComponent} from './nav/app-nav.component';
-// import {MidComponent} from './mid/mid.component';
-// import {NzZorroComponent} from './nz-zorro/nz-zorro.component';
-// import { NzZorroTempComponent } from './nz-zorro-temp/nz-zorro-temp.component';
-// import { ElementComponent } from './element/element.component';
 
 // import module
 import { ElModule } from 'element-angular';
-import { UserInfoComponent } from './user-info/user-info.component';
-import { HrComponent } from './hr/hr.component';
-import { AdminComponent } from './admin/admin.component';
-import { JobInfoComponent } from './job-info/job-info.component';
 import { IndexComponent } from './index/index.component';
 import { YuyueComponent } from './yuyue/yuyue.component';
 import { KefuComponent } from './kefu/kefu.component';
 import { ChekuangComponent } from './chekuang/chekuang.component';
+import { ZhanghaoModule } from './zhanghao/zhanghao.module'
 
 
 @NgModule({
   declarations: [
     AppComponent,
     AppNavComponent,
-    // MidComponent,
-    // NzZorroComponent,
-    // NzZorroTempComponent,
-    // ElementComponent,
-    UserInfoComponent,
-    HrComponent,
-    AdminComponent,
-    JobInfoComponent,
     IndexComponent,
     YuyueComponent,
     KefuComponent,
     ChekuangComponent,
   ],
   imports: [
+    ZhanghaoModule,
     BrowserModule,
     ReactiveFormsModule,
     FormsModule,
