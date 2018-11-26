@@ -1,6 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
-
 @import "~element-angular/theme/index.css";
+
+//整体
+.demo-box {
+  max-width: 800px;
+  // min-width: 500px;
+
+  margin: 10px auto;
+}
+
+.el-main {
+  width: 100%;
+  margin: 0 auto;
+  background: rgba(188, 188, 188, 0.1);
+}
+
 
 .el-row {
   margin-bottom: 20px;
@@ -12,6 +26,10 @@
 
 .el-col {
   border-radius: 4px;
+}
+
+.el-form-item {
+  max-width: 500px;
 }
 
 .bg-purple-dark {
@@ -68,4 +86,20 @@
   display: block;
   text-align: center;
   margin: 3px 0;
+}
+
+
+//预约
+.el-table .info-row {
+  background: #c9e5f5;
+}
+
+.el-table .positive-row {
+  background: #e2f0e4;
+}
+
+//时间输入框
+.myDate {
+  width: 50%;
+  max-width: 100px;
 }

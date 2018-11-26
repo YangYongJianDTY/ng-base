@@ -1,3 +1,28 @@
-<p>
-  register works!
-</p>
+<div el-container direction="vertical" class="demo-box">
+  <div el-header>
+    <div el-row>
+      <div el-col span="24">
+        <div class="grid-content title">
+          <h1>注册</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div el-main>
+    <el-form [formGroup]="registerForm" label-width="100px" size="small" [show-icon]="true" [show-message]="true" el-class="form-demo">
+      <el-form-item label="邮箱" [required]="true" [status]="statusCtrl('mail')" [error]="messageCtrl('mail')">
+        <el-input formControlName="mail"></el-input>
+      </el-form-item>
+      <el-form-item label="密码" [required]="true" [status]="statusCtrl('password')" [error]="messageCtrl('password')">
+        <el-input formControlName="password" native-type="password"></el-input>
+      </el-form-item>
+      <el-form-item label="确认密码" [required]="true" [status]="statusCtrl('password2')" [error]="messageCtrl('password2')">
+        <el-input formControlName="password2" native-type="password"></el-input>
+      </el-form-item>
+      <el-form-item>
+        <el-button type="primary" (click)="submit()">提交</el-button>
+        <el-button (click)="reset()">重置</el-button>
+      </el-form-item>
+    </el-form>
+  </div>
+</div>

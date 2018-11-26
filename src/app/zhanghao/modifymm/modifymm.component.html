@@ -1,3 +1,31 @@
-<p>
-  modifymm works!
-</p>
+<div el-container direction="vertical" class="demo-box">
+  <div el-header>
+    <div el-row>
+      <div el-col span="24">
+        <div class="grid-content title">
+          <h1>修改密码</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div el-main>
+    <el-form [formGroup]="modifymmForm
+
+" label-width="100px" size="small" [show-icon]="true" [show-message]="true" el-class="form-demo">
+      <el-form-item label="邮箱" [required]="true" [status]="statusCtrl('mail')" [error]="messageCtrl('mail')">
+        <el-input formControlName="mail"></el-input>
+        <el-button [plain]="true" type="info" size="mini">发送验证码至邮箱</el-button>
+      </el-form-item>
+      <el-form-item label="验证码" [required]="true" [status]="statusCtrl('mailPW')" [error]="messageCtrl('mailPW')">
+        <el-input formControlName="mailPW"></el-input>
+      </el-form-item>
+      <el-form-item label="新密码" [required]="true" [status]="statusCtrl('password')" [error]="messageCtrl('password')">
+        <el-input formControlName="password" native-type="password"></el-input>
+      </el-form-item>
+      <el-form-item>
+        <el-button type="primary" (click)="submit()">提交</el-button>
+        <el-button (click)="reset()">重置</el-button>
+      </el-form-item>
+    </el-form>
+  </div>
+</div>
