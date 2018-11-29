@@ -3,6 +3,11 @@
   margin: 0 auto;
 }
 
+html {
+  bottom: 0px;
+  margin: 0px;
+}
+
 .app-footer {
   bottom: 0px;
 }

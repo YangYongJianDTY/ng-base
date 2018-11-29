@@ -1,3 +1,51 @@
-<p>
-  index works!
-</p>
+<div el-container direction="vertical" class="demo-box">
+  <!--   <div el-main>
+  <h3 class="indexTitle">新车展示</h3>
+  <el-carousel arrow="always" autoplay="false">
+    <el-carousel-item *ngFor="let item of ['宝马', '奔驰', '法拉利']; let i = index" [label]="item">
+      <div class="small">
+        <h3>{{item}}.jpg</h3>
+      </div>
+    </el-carousel-item>
+  </el-carousel>
+</div> -->
+  <el-card class="box-card">
+    <ng-template #header>
+      <div class="clearfix">
+        <h3 style="line-height: 36px; text-align: center;">新车展示</h3>
+        <!-- <el-button style="float: right;" type="primary">操作按钮</el-button> -->
+      </div>
+    </ng-template>
+    <el-carousel arrow="always" autoplay="true" indicator-position="outside">
+      <el-carousel-item *ngFor="let item of ['宝马', '奔驰', '法拉利']; let i = index" [label]="item">
+        <div class="small">
+          <h3>{{item}}.jpg</h3>
+        </div>
+      </el-carousel-item>
+    </el-carousel>
+  </el-card>
+  <el-card class="box-card">
+    <ng-template #header>
+      <div class="clearfix">
+        <h3 style="line-height: 36px; text-align: center;">优惠活动</h3>
+        <!-- <el-button style="float: right;" type="primary">操作按钮</el-button> -->
+      </div>
+    </ng-template>
+    <div el-row>
+      <div el-col span="12" *ngFor="let item of [1, 2, 3, 4, 5]" class="text item">
+        <!-- 对话框 -->
+        <div class="box-card" #card>
+          <el-button (click)="card[item] = true">{{'优惠活动 ' + item }}</el-button>
+          <el-dialog [title]="'youhui'" [(visible)]="card[item]" center="true">
+            <ng-template #title>
+              <span class="el-icon-warning"></span>
+              <span>{{'优惠活动 ' + item }}</span>
+            </ng-template>
+            <span>优惠活动详情优惠活动详情优惠活动详情优惠活动详情优惠活动详情优惠活动详情优惠活动详情优惠活动详情优惠活动详情优惠活动详情优惠活动详情优惠活动详情优惠活动详情优惠活动详情优惠活动详情优惠活动详情优惠活动详情优惠活动详情优惠活动详情优惠活动详情优惠活动详情优惠活动详情优惠活动详情优惠活动详情优惠活动详情优惠活动详情优惠活动详情优惠活动详情优惠活动详情</span>
+          </el-dialog>
+        </div>
+        <!-- 对话框 -->
+      </div>
+    </div>
+  </el-card>
+</div>

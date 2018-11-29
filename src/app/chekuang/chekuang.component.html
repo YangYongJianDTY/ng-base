@@ -1,3 +1,97 @@
-<p>
-  chekuang works!
-</p>
+<div el-container direction="vertical" class="demo-box">
+  <div el-header>
+    <div el-row>
+      <div el-col span="24">
+        <div class="grid-content title">
+          <h1>车况检测</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div el-main>
+    <el-form [formGroup]="chekuangForm" label-width="170px" size="small" [show-icon]="true" [show-message]="true" el-class="form-demo">
+      <el-form-item label="车型" [required]="true" [status]="statusCtrl('chexing')" [error]="messageCtrl('chexing')">
+        <el-input formControlName="chexing"></el-input>
+      </el-form-item>
+      <el-form-item label="里程（km）" [required]="true" [status]="statusCtrl('licheng')" [error]="messageCtrl('licheng')">
+        <el-input formControlName="licheng"></el-input>
+      </el-form-item>
+      <h2>发动机</h2>
+      <el-form-item label="机油是否符合量油尺标准">
+        <el-radio-group formControlName="youliang">
+          <el-radio label="shi1">是</el-radio>
+          <el-radio label="fou2">否</el-radio>
+        </el-radio-group>
+      </el-form-item>
+      <el-form-item label="水箱水量是否符合标准">
+        <el-radio-group formControlName="shuiliang">
+          <el-radio label="shi2">是</el-radio>
+          <el-radio label="fou2">否</el-radio>
+        </el-radio-group>
+      </el-form-item>
+      <el-form-item label="水温是否正常">
+        <el-radio-group formControlName="shuiwen">
+          <el-radio label="shi3">是</el-radio>
+          <el-radio label="fou3">否</el-radio>
+        </el-radio-group>
+      </el-form-item>
+      <el-form-item label="发动机是否能正常启动">
+        <el-radio-group formControlName="qidong">
+          <el-radio label="shi4">是</el-radio>
+          <el-radio label="fou4">否</el-radio>
+        </el-radio-group>
+      </el-form-item>
+      <el-form-item label="低中高速是否运转稳定">
+        <el-radio-group formControlName="wending">
+          <el-radio label="shi5">是</el-radio>
+          <el-radio label="fou5">否</el-radio>
+        </el-radio-group>
+      </el-form-item>
+      <el-form-item label="发动机是否有异常响声">
+        <el-radio-group formControlName="xiangsheng">
+          <el-radio label="shi6">是</el-radio>
+          <el-radio label="fou6">否</el-radio>
+        </el-radio-group>
+      </el-form-item>
+      <h2>底盘</h2>
+      <el-form-item label="转向及连接装置是否松旷">
+        <el-radio-group formControlName="zhuanxiang">
+          <el-radio label="shi7">是</el-radio>
+          <el-radio label="fou7">否</el-radio>
+        </el-radio-group>
+      </el-form-item>
+      <el-form-item label="刹车是否有效">
+        <el-radio-group formControlName="shache">
+          <el-radio label="shi8">是</el-radio>
+          <el-radio label="fou8">否</el-radio>
+        </el-radio-group>
+      </el-form-item>
+      <el-form-item label="离合器是否能平稳分离">
+        <el-radio-group formControlName="lihe">
+          <el-radio label="shi9">是</el-radio>
+          <el-radio label="fou9">否</el-radio>
+        </el-radio-group>
+      </el-form-item>
+      <el-form-item label="行驶中变速箱有无异响">
+        <el-radio-group formControlName="biansuxiang">
+          <el-radio label="shi10">是</el-radio>
+          <el-radio label="fou10">否</el-radio>
+        </el-radio-group>
+      </el-form-item>
+      <h2>车灯</h2>
+      <el-form-item label="请勾选有问题的车灯">
+        <el-checkbox-group formControlName="chedeng" (modelChange)="chedeng">
+          <el-checkbox label="yuanguangdeng">远光灯</el-checkbox>
+          <el-checkbox label="jingaungdeng">近光灯</el-checkbox>
+          <el-checkbox label="zhuanxiangdeng">转向灯</el-checkbox>
+          <el-checkbox label="shachedeng">刹车灯</el-checkbox>
+          <el-checkbox label="yibiaodeng">仪表灯</el-checkbox>
+          <el-checkbox label="jingshideng">警示灯</el-checkbox>
+        </el-checkbox-group>
+      </el-form-item>
+      <el-form-item>
+        <el-button type="primary" (click)="submit()">提交</el-button>
+      </el-form-item>
+    </el-form>
+  </div>
+</div>

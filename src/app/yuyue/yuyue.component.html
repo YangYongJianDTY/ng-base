@@ -10,7 +10,7 @@
   </div>
   <div el-main>
     <h2 class="yuyueTitle">预约维修：</h2>
-    <el-form [formGroup]="validateForm" label-width="100px" size="small" [show-icon]="true" [show-message]="true" el-class="form-demo">
+    <el-form [formGroup]="validateForm" label-width="90px" size="small" [show-icon]="true" [show-message]="true" el-class="form-demo">
       <el-form-item label="车况检测" [status]="statusCtrl('chekuang')" [error]="messageCtrl('chekuang')" [required]="true">
         <el-button type="primary">车况检测</el-button>
         <el-input type="hidden" [model]="input" placeholder="请输入内容" formControlName="chekuang"></el-input>
